@@ -6,7 +6,7 @@
       flake = false;
     };
     zls = {
-      url = "github:zigtools/zls/0.16.0";
+      url = "github:zigtools/zls";
       flake = false;
     };
   };
@@ -51,7 +51,7 @@
                   llvmPackages_22.lld
                   llvmPackages_22.llvm
                 ]
-                ++ lib.optionals (!stdenv.isDarwin) [ autoPatchelfHook ];
+                ++ lib.optionals (!stdenv.hostPlatform.isDarwin) [ autoPatchelfHook ];
 
                 outputs = [ "out" ];
               }
@@ -111,6 +111,7 @@
           default = pkgs.mkShell {
             nativeBuildInputs = [
               pkgs.zig
+              pkgs.zls
             ];
           };
         }
