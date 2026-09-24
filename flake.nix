@@ -6,7 +6,7 @@
       flake = false;
     };
     zls = {
-      url = "github:zigtools/zls";
+      url = "github:theoparis/zls";
       flake = false;
     };
   };
@@ -73,13 +73,13 @@
                     pname
                     version
                     ;
-                  hash = "sha256-I9mWQL83hYDOyL6sTEWgzzYyV8w0v6kmbTmUV7HO6K0=";
+                  hash = "sha256-puzUJS9GTM6Fo6s1qP1oE0JxiUEORn/8f0xkS1BgUjA=";
                 }
               } $ZIG_GLOBAL_CACHE_DIR/p
             '';
 
             nativeBuildInputs = [
-              prev.zig
+              zig
             ];
           });
 
